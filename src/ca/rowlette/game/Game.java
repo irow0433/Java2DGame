@@ -10,9 +10,6 @@ import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
 
-import ca.rowlette.game.gfx.Screen;
-import ca.rowlette.game.gfx.SpriteSheet;
-
 public class Game extends Canvas implements Runnable {
 
 	
@@ -36,7 +33,7 @@ public class Game extends Canvas implements Runnable {
 	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 	
-	private Screen screen;
+	//private Screen screen;
 	
 	public Game() {
 		//a dimension is just a width and a height.
@@ -63,9 +60,9 @@ public class Game extends Canvas implements Runnable {
 	}
 	
 	//init = initialize
-	public void init() {
-		screen = new Screen(WIDTH, HEIGHT, new SpriteSheet("/spritesheet1.png"));
-	}
+	//public void init() {
+	//	screen = new Screen(WIDTH, HEIGHT, new SpriteSheet("/spritesheet1.png"));
+	//}
 	
 	//Synchronized means that the method cannot be executed by two threads at the same time. For future references you'll be using more of this in C++.
 	public synchronized void start() {
@@ -92,7 +89,7 @@ public class Game extends Canvas implements Runnable {
 		long lastTimer = System.currentTimeMillis();
 		double delta = 0;
 		
-		init();
+		//init();
 		
 		while(running) {
 			long now = System.nanoTime();
@@ -143,7 +140,7 @@ public class Game extends Canvas implements Runnable {
 			return;
 			}
 		
-		screen.render(pixels, 0, WIDTH);
+		//screen.render(pixels, 0, WIDTH);
 		
 		Graphics g = bs.getDrawGraphics();
 		
